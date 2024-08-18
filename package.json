@@ -1,0 +1,17 @@
+{
+  "name": "scroll-info-css",
+  "version": "1.0.0",
+  "main": "scroll-info.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/significative/scroll-info-css"
+  },
+  "homepage": "https://github.com/significative/scroll-info-css/#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

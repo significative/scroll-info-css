@@ -1,0 +1,35 @@
+@property --scroll-position-normal {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --scroll-position-tardiness {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+
+:root {
+    animation: scroll_variables 3s linear;
+    animation-timeline: scroll(root);
+}
+
+
+body {
+    transition: --scroll-position-tardiness .1s linear;
+    /* calc(var(--scroll-position-normal) - var(--scroll-position-tardiness)/1  (0.1-->1) */
+    --scroll-speed: calc(var(--scroll-position-normal) - var(--scroll-position-tardiness));
+    --scroll-direction: calc(var(--scroll-speed) / max(var(--scroll-speed), -1 * var(--scroll-speed)));
+    --scroll-state: calc(var(--scroll-speed) / var(--scroll-speed));
+}
+
+
+@keyframes scroll_variables {
+    to {
+        /* 若将从顶到底距离的值视为1，则这里的取值应为1/0.1。那么扩大10倍的取值就是(1/0.1)*10=100，即现在距离是10。 */
+        --scroll-position-normal: 100;
+        --scroll-position-tardiness: 100;
+    }
+}
